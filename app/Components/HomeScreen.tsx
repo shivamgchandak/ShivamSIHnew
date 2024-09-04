@@ -1,14 +1,18 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, TextInput } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; // For menu icon
-import Ionicons from 'react-native-vector-icons/Ionicons'; // For bottom nav icons
 
-const Index = () => {
+const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.welcomeText}>Welcome,</Text>
         <Text style={styles.nameText}>John Copper</Text>
+        <View style={styles.searchContainer}>
+          <TextInput 
+            style={styles.searchInput}
+            placeholder="Search"
+          />
+        </View>
       </View>
 
       <ScrollView style={styles.content}>
@@ -25,24 +29,25 @@ const Index = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.categoryIcons}>
+            {/* Replace with actual icons */}
             <View style={styles.categoryItem}>
-              <Image source={require('../assets/family.png')} style={styles.categoryPlaceholder}/>
+              <View style={styles.iconPlaceholder} />
               <Text>Family</Text>
             </View>
             <View style={styles.categoryItem}>
-              <Image source={require('../assets/games.png')} style={styles.categoryPlaceholder}/>
+              <View style={styles.iconPlaceholder} />
               <Text>Games</Text>
             </View>
             <View style={styles.categoryItem}>
-              <Image source={require('../assets/greetings.png')} style={styles.categoryPlaceholder}/>
+              <View style={styles.iconPlaceholder} />
               <Text>Greetings</Text>
             </View>
             <View style={styles.categoryItem}>
-              <Image source={require('../assets/times.png')} style={styles.categoryPlaceholder}/>
+              <View style={styles.iconPlaceholder} />
               <Text>Times</Text>
             </View>
             <View style={styles.categoryItem}>
-              <Image source={require('../assets/cities.png')} style={styles.categoryPlaceholder}/>
+              <View style={styles.iconPlaceholder} />
               <Text>Cities</Text>
             </View>
           </View>
@@ -57,53 +62,40 @@ const Index = () => {
           </View>
           <View style={styles.lessonCards}>
             <View style={styles.lessonCard}>
-              <View style={styles.lessonCards}>
-                <Image source={require('../assets/alphabets.png')} style={styles.lessonPlaceholder} />
-                <Icon name="dots-vertical" size={24} color="black" />
-              </View>
               <Text style={styles.lessonTitle}>Alphabets</Text>
+              <View style={styles.progressBar}>
+                <View style={[styles.progress, { width: '24%' }]} />
+              </View>
+              <Text style={styles.progressText}>24%</Text>
             </View>
             <View style={styles.lessonCard}>
-            <View style={styles.lessonCards}>
-                <Image source={require('../assets/numbers.png')} style={styles.lessonPlaceholder} />
-                <Icon name="dots-vertical" size={24} color="black" />
-              </View>
               <Text style={styles.lessonTitle}>Numbers</Text>
+              <View style={styles.progressBar}>
+                <View style={[styles.progress, { width: '74%' }]} />
+              </View>
+              <Text style={styles.progressText}>74%</Text>
             </View>
           </View>
         </View>
       </ScrollView>
 
       <View style={styles.bottomNav}>
-
         <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="grid-outline" size={24} color="gray" />
-          <Text style={styles.navText}>Category</Text>
+          <Text>Category</Text>
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="swap-horizontal-outline" size={24} color="gray" />
-          <Text style={styles.navText}>Converter</Text>
+          <Text>Converter</Text>
         </TouchableOpacity>
-
-        <View style={styles.navHomeWrapper}>
-          <TouchableOpacity style={styles.homeNav}>
-            <Ionicons name="home" size={32} color="orange" />
-          </TouchableOpacity>
-        </View>
-
+        <TouchableOpacity style={[styles.navItem, styles.navItemActive]}>
+          <Text>Home</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="book-outline" size={24} color="gray" />
-          <Text style={styles.navText}>Lessons</Text>
+          <Text>Lessons</Text>
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.navItem}>
-          <Ionicons name="person-outline" size={24} color="gray" />
-          <Text style={styles.navText}>Account</Text>
+          <Text>Account</Text>
         </TouchableOpacity>
-
       </View>
-
     </View>
   );
 };
@@ -125,6 +117,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+  searchContainer: {
+    backgroundColor: '#F0F0F0',
+    borderRadius: 20,
+    padding: 10,
+  },
+  searchInput: {
+    fontSize: 16,
   },
   content: {
     flex: 1,
@@ -167,11 +167,11 @@ const styles = StyleSheet.create({
   categoryItem: {
     alignItems: 'center',
   },
-  categoryPlaceholder: {
-    width: 60,
-    height: 60,
+  iconPlaceholder: {
+    width: 40,
+    height: 40,
     backgroundColor: '#F0F0F0',
-    borderRadius: 30,
+    borderRadius: 20,
     marginBottom: 5,
   },
   lessonsSection: {
@@ -189,47 +189,38 @@ const styles = StyleSheet.create({
   },
   lessonTitle: {
     fontWeight: 'bold',
-    fontSize: 24,
-    textAlign: 'left',
-  },
-  lessonPlaceholder: {
-    width: 50,
-    height: 50,
     marginBottom: 10,
+  },
+  progressBar: {
+    height: 5,
+    backgroundColor: '#D0D0D0',
+    borderRadius: 5,
+  },
+  progress: {
+    height: 5,
+    backgroundColor: '#4CAF50',
+    borderRadius: 5,
+  },
+  progressText: {
+    textAlign: 'right',
+    marginTop: 5,
   },
   bottomNav: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    backgroundColor: '#0047AB',
-    height: 70,
-    paddingBottom: 10,
-    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: '#E0E0E0',
+    paddingVertical: 10,
   },
   navItem: {
     alignItems: 'center',
   },
-  navText: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    color: 'gray',
-  },
-  navHomeWrapper: {
-    position: 'relative',
-    bottom: 30,
-    backgroundColor: '#0047AB',
-    borderRadius: 100,
-    height:80,
-    width:80,
-    padding: 10,
-  },
-  homeNav: {
-    width: 60,
-    height: 60,
-    backgroundColor: '#fff',
-    borderRadius: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+  navItemActive: {
+    backgroundColor: '#4CAF50',
+    borderRadius: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 5,
   },
 });
 
-export default Index;
+export default HomeScreen;
