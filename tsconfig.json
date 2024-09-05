@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/Components/TextToSignStartScreen.js", "app/Components/Convertor.tsx", "app/Components/intro1.tsx", "app/Components/HomeScreen.tsx", "app/Components/FooterComponent.tsx", "app/Components/CategoryComponent.tsx", "app/Components/SignToTextStartScreen.js"  ]
 }

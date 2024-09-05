@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import FooterComponent from './FooterComponent';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 
 const Converter = () => {
   return (
@@ -19,7 +19,7 @@ const Converter = () => {
 
         <ScrollView>
           <View style={styles.converterBox}>
-            <View style={styles.converterRow}>
+            <TouchableOpacity onPress={()=> {router.push('/(tabs)/texttosign')}} style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
                   <Icon name="text-fields" type="material" size={24} color="#63E6BE" />
@@ -33,13 +33,13 @@ const Converter = () => {
                 </View>
                 <Text>Sign</Text>
               </View>
-            </View>
+            </TouchableOpacity>
             <Text style={styles.converterDescription}>
               Write your word, sentence, phrase etc and get to know how it is in sign language.
             </Text>
           </View>
 
-          <View style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -58,9 +58,9 @@ const Converter = () => {
             <Text style={styles.converterDescription}>
               Show your sign language and get its text in form of word, sentence, phrase, etc.
             </Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -79,9 +79,9 @@ const Converter = () => {
             <Text style={styles.converterDescription}>
               Record your audio and get to know how it is in sign language.
             </Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -100,9 +100,9 @@ const Converter = () => {
             <Text style={styles.converterDescription}>
               Show your sign language and get its audio.
             </Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -121,9 +121,9 @@ const Converter = () => {
             <Text style={styles.converterDescription}>
               Capture the image and get to know how it is in sign language.
             </Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -142,7 +142,7 @@ const Converter = () => {
             <Text style={styles.converterDescription}>
               Show your sign language and get its image.
             </Text>
-          </View>
+          </TouchableOpacity>
         </ScrollView>
       </View>
 
