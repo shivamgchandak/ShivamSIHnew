@@ -9,9 +9,8 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.welcomeText}>Welcome,</Text>
-        <Text style={styles.nameText}>John Copper</Text>
-        <Link href={"(tabs)/intro"}>Test</Link>
+        <Text style={styles.welcomeText}>SignSetu</Text>
+        <Text style={styles.nameText}>Sharing the Silence</Text>
       </View>
 
       <ScrollView style={styles.content}>
@@ -53,30 +52,6 @@ const HomeScreen = () => {
           </View>
         </View>
 
-        <View style={styles.lessonsSection}>
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>My Lessons</Text>
-            <TouchableOpacity>
-              <Text style={styles.seeAllText}>See All</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.lessonCards}>
-            <View style={styles.lessonCard}>
-              <View style={styles.lessonCards}>
-                <Image source={require('../assets/alphabets.png')} style={styles.lessonPlaceholder} />
-                <Icon name="dots-vertical" size={24} color="black" />
-              </View>
-              <Text style={styles.lessonTitle}>Alphabets</Text>
-            </View>
-            <View style={styles.lessonCard}>
-            <View style={styles.lessonCards}>
-                <Image source={require('../assets/numbers.png')} style={styles.lessonPlaceholder} />
-                <Icon name="dots-vertical" size={24} color="black" />
-              </View>
-              <Text style={styles.lessonTitle}>Numbers</Text>
-            </View>
-          </View>
-        </View>
       </ScrollView>
 
       <View style={styles.navbarfooter}>
@@ -103,16 +78,18 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   welcomeText: {
-    fontSize: 18,
+    fontSize: 26,
     color: '#FFA500',
+    fontWeight: 'bold'
   },
   nameText: {
-    fontSize: 24,
+    fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   content: {
     flex: 1,
+    marginBottom:100,
   },
   card: {
     backgroundColor: '#FFA500',
@@ -158,29 +135,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0F0F0',
     borderRadius: 30,
     marginBottom: 5,
-  },
-  lessonsSection: {
-    margin: 20,
-  },
-  lessonCards: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  lessonCard: {
-    backgroundColor: '#F0F0F0',
-    padding: 15,
-    borderRadius: 10,
-    width: '48%',
-  },
-  lessonTitle: {
-    fontWeight: 'bold',
-    fontSize: 24,
-    textAlign: 'left',
-  },
-  lessonPlaceholder: {
-    width: 50,
-    height: 50,
-    marginBottom: 10,
   },
   bottomNav: {
     flexDirection: 'row',

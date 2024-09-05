@@ -27,7 +27,7 @@ const TextToSignStartScreen = () => {
               Start writing your text and get its result in form of sign language.
             </Text>
 
-            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/Components/TextToSignAdd')}}>
+            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/(tabs)/texttoisl')}}>
               <Text style={styles.startButtonText}>Start Now</Text>
             </TouchableOpacity>
           </View>
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    marginBottom:100,
   },
   navbarfooter: {
     marginTop: 10,

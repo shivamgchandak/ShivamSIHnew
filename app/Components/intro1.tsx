@@ -1,3 +1,4 @@
+import { router } from 'expo-router';
 import React, { useRef, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Dimensions, TouchableOpacity, Image, Animated } from 'react-native';
 
@@ -75,7 +76,7 @@ const OnboardingSlider = () => {
     if (currentIndex < slides.length - 1) {
       slidesRef.current.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      console.log('Last item.');
+      router.push('/(tabs)/intro');
     }
   };
 

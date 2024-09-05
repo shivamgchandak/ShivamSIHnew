@@ -27,7 +27,7 @@ const SignToTextStartScreen = () => {
               Capture sign and get its result in form of text.
             </Text>
 
-            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/Components/SignToTextConvertor')}}>
+            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/(tabs)/isltotext')}}>
               <Text style={styles.startButtonText}>Start Now</Text>
             </TouchableOpacity>
           </View>
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    marginBottom:100,
   },
   navbarfooter: {
     marginTop: 10,

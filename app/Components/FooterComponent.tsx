@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, TextInput 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; // For menu icon
 import Ionicons from 'react-native-vector-icons/Ionicons'; // For bottom nav icons
 import { Link } from 'expo-router';
-import categorymain from '../(tabs)/categorymain';
+import Categorymain from '../(tabs)/categorymain';
 
 const FooterComponent = () => {
   return (

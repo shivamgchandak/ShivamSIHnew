@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import TextToSignStartScreen from '../Components/TextToSignStartScreen'
 
-const texttosign = () => {
+const TextToSign = () => {
   return (
   
       <TextToSignStartScreen/>
@@ -10,4 +10,4 @@ const texttosign = () => {
   )
 }
 
-export default texttosign
+export default TextToSign

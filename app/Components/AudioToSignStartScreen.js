@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import FooterComponent from './FooterComponent';
 import { Link, router } from 'expo-router';
 
-const AudioToSignStartScreen = () => {
+const TextToSignStartScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -14,20 +14,20 @@ const AudioToSignStartScreen = () => {
               <Icon name="arrow-back" type="material" size={24}/>
             </View>
           </Link>
-          <Text style={styles.headerTitle}>Audio To Sign</Text>
+          <Text style={styles.headerTitle}>Text To Sign</Text>
         </View>
 
         <ScrollView>
           <View style={styles.mainContent}>
             <Image
-              source={require('../assets/audiostart.png')} // Add your image here
+              source={require('../assets/textstart.png')} // Add your image here
               style={styles.image}
             />
             <Text style={styles.description}>
-              Record audio and get its result in form of sign language.
+              Start writing your text and get its result in form of sign language.
             </Text>
 
-            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/Components/AudioToSignAdd')}}>
+            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/Components/TextToSignAdd')}}>
               <Text style={styles.startButtonText}>Start Now</Text>
             </TouchableOpacity>
           </View>
@@ -106,4 +106,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default AudioToSignStartScreen;
+export default TextToSignStartScreen;

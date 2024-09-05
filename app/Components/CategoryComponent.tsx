@@ -1,54 +1,116 @@
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import FooterComponent from './FooterComponent';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router'; // Use useRouter hook
 
-const categories = [
-  { id: '1', title: 'Family', icon: require('../assets/family.png'), description: 'Learn about family through sign language.' },
-  { id: '2', title: 'Games', icon: require('../assets/games.png'), description: 'Learn about games through sign language.' },
-  { id: '3', title: 'Greetings', icon: require('../assets/greetings.png'), description: 'Learn about greetings through sign language.' },
-  { id: '4', title: 'Times', icon: require('../assets/times.png'), description: 'Learn about times through sign language.' },
-  { id: '5', title: 'Cities', icon: require('../assets/cities.png'), description: 'Learn about cities through sign language.' },
-  { id: '6', title: 'Numbers', icon: require('../assets/numbers.png'), description: 'Learn about numbers through sign language.' },
-  { id: '7', title: 'Food', icon: require('../assets/foods.png'), description: 'Learn about food through sign language.' },
-];
+const CategoryList = () => {
+  const router = useRouter(); // Get the router instance
 
-const CategoryItem = ({ item }) => (
-  <TouchableOpacity style={styles.itemContainer}>
-    <View style={styles.iconContainer}>
-      <Image source={item.icon} style={styles.iconImage} />
-    </View>
-    <View style={styles.textContainer}>
-      <Text style={styles.title}>{item.title}</Text>
-      <Text style={styles.description}>{item.description}</Text>
-    </View>
-    <Feather name="more-vertical" size={24} color="#ccc" />
-  </TouchableOpacity>
-);
+  return (
+    <View style={styles.container}>
+      <ScrollView style={styles.content}>
+        <View style={styles.header}>
+          <Link href="/Components/HomeScreen">
+            <View style={styles.leftButton}>
+              <Feather name="arrow-left" size={24} color="black" />
+            </View>
+          </Link>
+          <Text style={styles.headerTitle}>Category</Text>
+        </View>
 
-const CategoryList = () => (
-  <View style={styles.container}>
-    <View style={styles.header}>
-        <Link href="/Components/HomeScreen">
-          <View style={styles.leftButton}>
-            <Feather name="arrow-left" size={24} color="black" />
+        {/* Hardcoded Category Items */}
+        <TouchableOpacity style={styles.itemContainer}>
+          <View style={styles.iconContainer}>
+            <Image source={require('../assets/family.png')} style={styles.iconImage} />
           </View>
-        </Link>
-      <Text style={styles.headerTitle}>Category</Text>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Family</Text>
+            <Text style={styles.description}>Learn about family through sign language.</Text>
+          </View>
+          <Feather name="more-vertical" size={24} color="#ccc" />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.itemContainer}>
+          <View style={styles.iconContainer}>
+            <Image source={require('../assets/games.png')} style={styles.iconImage} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Games</Text>
+            <Text style={styles.description}>Learn about games through sign language.</Text>
+          </View>
+          <Feather name="more-vertical" size={24} color="#ccc" />
+        </TouchableOpacity>
+
+        {/* Navigate to the Greetings page */}
+        <TouchableOpacity style={styles.itemContainer} onPress={() => router.push('/(tabs)/greetings')}>
+          <View style={styles.iconContainer}>
+            <Image source={require('../assets/greetings.png')} style={styles.iconImage} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Greetings</Text>
+            <Text style={styles.description}>Learn about greetings through sign language.</Text>
+          </View>
+          <Feather name="more-vertical" size={24} color="#ccc" />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.itemContainer}>
+          <View style={styles.iconContainer}>
+            <Image source={require('../assets/times.png')} style={styles.iconImage} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Times</Text>
+            <Text style={styles.description}>Learn about times through sign language.</Text>
+          </View>
+          <Feather name="more-vertical" size={24} color="#ccc" />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.itemContainer}>
+          <View style={styles.iconContainer}>
+            <Image source={require('../assets/cities.png')} style={styles.iconImage} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Cities</Text>
+            <Text style={styles.description}>Learn about cities through sign language.</Text>
+          </View>
+          <Feather name="more-vertical" size={24} color="#ccc" />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.itemContainer}>
+          <View style={styles.iconContainer}>
+            <Image source={require('../assets/numbers.png')} style={styles.iconImage} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Numbers</Text>
+            <Text style={styles.description}>Learn about numbers through sign language.</Text>
+          </View>
+          <Feather name="more-vertical" size={24} color="#ccc" />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.itemContainer}>
+          <View style={styles.iconContainer}>
+            <Image source={require('../assets/foods.png')} style={styles.iconImage} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>Food</Text>
+            <Text style={styles.description}>Learn about food through sign language.</Text>
+          </View>
+          <Feather name="more-vertical" size={24} color="#ccc" />
+        </TouchableOpacity>
+      </ScrollView>
+
+      <View style={styles.navbarfooter}>
+        <FooterComponent />
+      </View>
     </View>
-    <FlatList
-      data={categories}
-      renderItem={({ item }) => <CategoryItem item={item} />}
-      keyExtractor={item => item.id}
-    />
-    <View style={styles.navbarfooter}>
-      <FooterComponent />
-    </View>
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    marginBottom: 100,
+  },
   navbarfooter: {
     marginTop: 10,
     position: 'absolute',

@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import AudioToSignStartScreen from '../Components/AudioToSignStartScreen'
 
-const audiotosign = () => {
+const AudioToSign = () => {
   return (
   
       <AudioToSignStartScreen/>
@@ -10,4 +10,4 @@ const audiotosign = () => {
   )
 }
 
-export default audiotosign
+export default AudioToSign

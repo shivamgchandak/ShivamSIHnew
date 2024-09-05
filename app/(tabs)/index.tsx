@@ -1,8 +1,11 @@
+// index.tsx (formerly App.tsx)
+import OnboardingSlider from '@/app/Components/intro1';
 import * as React from 'react';
-import HomeScreen from '../Components/HomeScreen'; // Adjust the path as needed
 
-function Index() {
-  return <HomeScreen />;
+function App() {
+  return (
+    <OnboardingSlider />
+  );
 }
 
-export default Index;
+export default App;

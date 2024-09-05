@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import SignToImageStartScreen from '../Components/SignToImageStartScreen'
 
-const signtoimage = () => {
+const SignToImage = () => {
   return (
   
       <SignToImageStartScreen/>
@@ -10,4 +10,4 @@ const signtoimage = () => {
   )
 }
 
-export default signtoimage
+export default SignToImage
