@@ -39,7 +39,7 @@ const Converter = () => {
             </Text>
           </View>
 
-          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/(tabs)/signtotext')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -60,7 +60,7 @@ const Converter = () => {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/(tabs)/audiotosign')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -81,7 +81,7 @@ const Converter = () => {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/(tabs)/signtoaudio')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -102,7 +102,7 @@ const Converter = () => {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/(tabs)/imagetosign')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>
@@ -123,7 +123,7 @@ const Converter = () => {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={()=> {router.push('/texttosign')}} style={styles.converterRow} style={styles.converterBox}>
+          <TouchableOpacity onPress={()=> {router.push('/(tabs)/signtoimage')}} style={styles.converterRow} style={styles.converterBox}>
             <View style={styles.converterRow}>
               <View style={styles.iconboxhead}>
                 <View style={styles.iconBox}>

@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import FooterComponent from './FooterComponent';
 import { Link, router } from 'expo-router';
 
-const SignToTextStartScreen = () => {
+const ImageToSignStartScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -14,20 +14,20 @@ const SignToTextStartScreen = () => {
               <Icon name="arrow-back" type="material" size={24}/>
             </View>
           </Link>
-          <Text style={styles.headerTitle}>Sign To Text</Text>
+          <Text style={styles.headerTitle}>Image To Sign</Text>
         </View>
 
         <ScrollView>
           <View style={styles.mainContent}>
             <Image
-              source={require('../assets/signstart.png')} // Add your image here
+              source={require('../assets/imagestart.png')} // Add your image here
               style={styles.image}
             />
             <Text style={styles.description}>
-              Capture sign and get its result in form of text.
+              Capture image and get its result in form of sign language.
             </Text>
 
-            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/Components/SignToTextConvertor')}}>
+            <TouchableOpacity style={styles.startButton} onPress={()=> {router.push('/Components/ImageToSingAdd')}}>
               <Text style={styles.startButtonText}>Start Now</Text>
             </TouchableOpacity>
           </View>
@@ -106,4 +106,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default SignToTextStartScreen;
+export default ImageToSignStartScreen;

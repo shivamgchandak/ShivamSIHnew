@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import FooterComponent from './FooterComponent';
 import { Link } from 'expo-router';
 
-const SignToTextAdd = () => {
+const ImageToSignAdd = () => {
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -14,7 +14,7 @@ const SignToTextAdd = () => {
             <Icon name="arrow-back" type="material" size={24} />
           </View>
         </Link>
-        <Text style={styles.headerTitle}>Sign To Text</Text>
+        <Text style={styles.headerTitle}>Image to Sign</Text>
         <Icon name="search" type="material" size={24} />
       </View>
 
@@ -26,7 +26,7 @@ const SignToTextAdd = () => {
           <TouchableOpacity style={styles.card}>
             <View style={styles.addNew}>
               <Icon name="add-circle-outline" type="material" size={50} color="#4CAF50" />
-              <Text style={styles.cardTitle}>Add new sign languages to your process</Text>
+              <Text style={styles.cardTitle}>Add new writings to your process</Text>
             </View>
           </TouchableOpacity>
 
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignToTextAdd;
+export default ImageToSignAdd;

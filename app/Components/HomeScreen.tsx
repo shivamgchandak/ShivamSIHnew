@@ -11,7 +11,7 @@ const HomeScreen = () => {
       <View style={styles.header}>
         <Text style={styles.welcomeText}>Welcome,</Text>
         <Text style={styles.nameText}>John Copper</Text>
-        <Link href={"(tabs)/intro"} >Test</Link>
+        <Link href={"(tabs)/intro"}>Test</Link>
       </View>
 
       <ScrollView style={styles.content}>
